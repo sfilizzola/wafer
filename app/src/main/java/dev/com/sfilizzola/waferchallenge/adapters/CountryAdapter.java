@@ -47,4 +47,10 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryViewHolder>{
         countryList.remove(position);
         notifyItemRemoved(position);
     }
+
+    public void restoreItem(CountryResponse item, int position) {
+        countryList.add(position, item);
+        // notify item added by position
+        notifyItemInserted(position);
+    }
 }
